@@ -1,0 +1,49 @@
+site_name: Formcloud Documentation
+site_url: https://docs.formcloud.app
+theme:
+  name: material
+  font:
+    text: 'Roboto'
+    code: 'Red Hat Mono'
+  features:
+    - navigation.footer
+  palette:
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Light Mode
+      primary: green
+      accent: light green
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Dark Mode
+      primary: green
+      accent: light green
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+
+
+extra:
+  social:
+    - icon: material/linkedin
+      link: https://www.linkedin.com/in/quang-nguyen-formcloud/
+
+copyright: Copyright © 2025 Formcloud
