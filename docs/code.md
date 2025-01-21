@@ -1,7 +1,7 @@
 # Function to add two numbers
 ```js linenums="1" title="page.js"
 function test(){
-    var a = 123;
+    var a = 456;
     return false;
 }
 ```
