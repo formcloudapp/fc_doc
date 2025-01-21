@@ -1,18 +1,32 @@
-# Welcome to MkDocs
+# Welcome to FC Documentation
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+### Getting Started
 
-## Commands
+Please follow the instructions below in sequential order:
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+* Download: <a href="https://formcloud.app/media/FC_Server_Application.xml" download>FC Server Application</a>
+* Download: <a href="https://formcloud.app/media/FC_Client_Application.zip" download>FC Client Application</a>
+* Go to Retrieved Update Sets and Import XML to load the "FC Server Application" update set.
+* Preview update set and commit.
+* Go to `https://[your_instance]/sys_ws_operation.do?sys_id=ed18366c975746d0e12c3eb0f053afce`
+* Set your Application Scope to FC and upload all files from the FC_Client_Application.zip as attachments on this record.
+* When working within the application, we want to set the current application scope to FC during insert, update, or delete operations, due to the siloed nature of the design. However, given the limitation that the application scope can only be set from the global scope, we need to create a script include in the global scope that is callable from all application scopes. Please create a new script include as outlined below:
+    * Name: SetApplicationScope
+    * API Name: global.SetApplicationScope
+    * Application: Global
+    * Accessible from: All Application Scope
+    * Script: 
+        ```javascript
+        var SetApplicationScope = Class.create();
+        SetApplicationScope.prototype = {
+            initialize: function() {},
+            setApplicationScopeById: function(scopeId) {
+                if (gs.getCurrentApplicationId() != scopeId) {
+                    gs.setCurrentApplicationId(scopeId);
+                }
+            },
+            type: 'SetApplicationScope'
+        };
+        ```
+    * Navigate to `https://[your_instance]/x_509925_fc_core` to see the portal.
 

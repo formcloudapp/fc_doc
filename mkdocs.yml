@@ -47,3 +47,11 @@ extra:
       link: https://www.linkedin.com/in/quang-nguyen-formcloud/
 
 copyright: Copyright © 2025 Formcloud
+
+nav:
+  - Getting Started: index.md
+  - Components:
+    - DataTable: 
+      - Introduction: Components/Datatable/overview.md
+      - Default Configuration: Components/Datatable/default.md
+  - API Reference: API/api.md
