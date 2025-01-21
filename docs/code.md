@@ -1,7 +1,8 @@
 # Function to add two numbers
 ```js linenums="1" title="page.js"
 function test(){
-    return true;
+    var a = 123;
+    return false;
 }
 ```
 
