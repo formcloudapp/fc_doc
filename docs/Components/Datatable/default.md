@@ -1,6 +1,6 @@
 !!! note "Default Configuration"
-    When creating a new datatable, the following code and configurations is by default added to the datatable.
-    To create a new datatable, you can use the datatable builder in the FC UI. However, you can view the code and configurations in the ServiceNow backend by going to this url: `https://<your-instance>.service-now.com/nav_to.do?uri=x_509925_fc_graphql_query_broker.do`. Keep in mind that it is not recommended to edit the code in the ServiceNow backend unless you are absolutely sure about what you are doing. The recommended way to edit the code is to use the datatable builder in the FC UI.
+    When creating a new datatable, the following code and configurations is by default.
+    To create a new datatable, you can use the datatable builder in the FC UI. However, you can view the code and configurations in the ServiceNow backend by going to this url: `https://<your-instance>.service-now.com/nav_to.do?uri=x_509925_fc_graphql_query_broker.do`. **Keep in mind that it is not recommended to edit the code in the ServiceNow backend** unless you are absolutely sure about what you are doing. The recommended way to configure the datatable is to use the datatable builder in the FC UI.
 
 === "Filter Builder"
 
@@ -44,7 +44,7 @@
     - **schema**: Type of schema being used (OOTB or custom)
     - **gql_schema**: The namespace of the GraphQL schema
 
-    ```javascript
+    ```javascript title="Server Script"
     ((current, params) => {
         const namespace = gs.getProperty(current.sys_scope.scope + '.graphql_namespace');
         const gqlSchemaGr = current.graphql_schema.getRefRecord();
@@ -86,7 +86,7 @@
     For OOTB schemas, it builds a query using the GlideRecord_Query structure.
     For custom schemas, it builds a query with the custom namespace and schema, including sys_id and specified fields.
 
-    ```javascript
+    ```javascript title="Client Script"
         function execute(params, configs) {
         let gql = '';
         if (configs.schema == 'ootb') {
@@ -146,7 +146,7 @@
                     * `getAsync(url)`: Make a GET request
                     * `graphQlAsync(query)`: Execute a GraphQL query
 
-    ```javascript
+    ```javascript title="Client Script"
     function execute(record, service) {
 
         return {
@@ -154,4 +154,3 @@
         }
     }
     ```
-

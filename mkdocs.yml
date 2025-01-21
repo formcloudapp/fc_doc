@@ -13,14 +13,14 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Light Mode
-      primary: green
+      primary: rgb(34, 40, 160)
       accent: light green
     # Light Mode
     - scheme: default
       toggle:
         icon: material/weather-sunny
         name: Dark Mode
-      primary: green
+      primary: rgb(34, 40, 160)
       accent: light green
 markdown_extensions:
   - attr_list
@@ -54,4 +54,8 @@ nav:
     - DataTable: 
       - Introduction: Components/Datatable/overview.md
       - Default Configuration: Components/Datatable/default.md
+      - Create a new DataTable: Components/Datatable/example.md
   - API Reference: API/api.md
+
+plugins:
+  - glightbox
