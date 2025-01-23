@@ -1,0 +1,1 @@
+In FC, a widget is identical to a page. The only difference is that a widget is embedded in a page. The purpose of a widget is to serve as a reusable component across multiple pages. It has the same capabilities as a page, including server and client scripts. Please see the [Page](../Page/overview.md) section for more information.

@@ -34,20 +34,33 @@ Below that we see:
 
 * A **"Selectable"** checkbox. This option indicate if records can be selected from the datatable.
 * A **"Filter"** button. This will open up a filter dialog where we can write (server side) javascript code to return a final encoded query string that will serve as the base filter for the datatable.
+    * For this example, we will update the filter to return a encoded query for **all active incidents**.
+    ```javascript
+    ((current, params) => {
+
+        return 'active=true';
+
+    })(current, params);
+    ```
 * A **"Script"** button. This will open up a dialog where we can write (clident side) javascript code that can be used in the datatable column's advance configuration.
 
-* The **"First Column"** This column with the header "Available" contains all the field for the `incident` table.
-* The **"Second Column"** This column contains a list of fields that we can add to the datatable.
-    * By default, the `sys_id` field is selected.
-* The **"Third Column"** This column will display the configuration of the selected field from the "Second Column".
 
 <div style="clear: both;"></div>
 
 ### Step 4: Configure the Column
 
+Underneath the Datatable configuration, we can see the column configurations. This area is divided into three panels.
+
+* The **"First Panel"** This column with the header "Available" contains all the field for the `incident` table.
+* The **"Second Panel"** This column contains a list of fields that we can add to the datatable.
+    * By default, the `sys_id` field is selected.
+* The **"Third Panel"** This column will display the configuration of the selected field from the "Second Column".
+
 Continuing from Step 3, we will add two additional fields, `number` and `short_description` to the datatable. Once added, lets click on the gear icon on the `number` field.
 
 There are a few configuration options that we can set for the `number` field.
+
+![Datatables](../../assets/datatable/3.png)
 
 * **"Pin"** This determines if the field will be displayed in the datatable. There are certain instance where we want to add a field to the datatable but we don't want it to be displayed, hence we can unpin the field. **For this example, we will be pinning the `number` field.**
 * **"Sort"** This is a boolean value that determines if the field can be sorted.
@@ -61,3 +74,12 @@ There are a few configuration options that we can set for the `number` field.
 * **"Sort Field"** This field most of the time will be left defaulted to the selected field name. However, if we want to sort on a different field when this field column is sorted, we can set it to a different field name.
 * **"Advance"** This field most of the time will be left defaulted to the selected field name. However, if we want to filter on a different field when this field column is filtered, we can set it to a different field name.
 
+### Step 5: Add a Datatable to a Page
+
+Note that the query-name attribute is the name of the datatable that we created in Step 2.
+
+```html
+<mdui-datatable query-name="active_incident"></mdui-datatable>
+```
+
+![Datatables](../../assets/datatable/4.png)

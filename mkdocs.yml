@@ -1,12 +1,15 @@
-site_name: Formcloud Documentation
-site_url: https://docs.formcloud.app
+site_name: Documentation
+site_url: https://formcloudapp.github.io/fc_doc/
 theme:
   name: material
+  logo: assets/logo-dark.svg
   font:
     text: 'Roboto'
     code: 'Red Hat Mono'
   features:
     - navigation.footer
+    - search.suggest
+    - search.highlight
   palette:
     # Dark Mode
     - scheme: slate
@@ -45,17 +48,37 @@ extra:
   social:
     - icon: material/linkedin
       link: https://www.linkedin.com/in/quang-nguyen-formcloud/
+    - icon: material/youtube
+      link: https://www.youtube.com/@FormCloud
 
 copyright: Copyright © 2025 Formcloud
 
 nav:
   - Getting Started: index.md
+  - Page:
+      - Introduction: Page/overview.md
+      - Create a new Page: Page/example.md
+  - Widget:
+      - Introduction: Widget/overview.md
+      - Create and embed a new Widget: Widget/example.md
+      - Passing options into the Widget: Widget/example2.md
   - Components:
     - DataTable: 
       - Introduction: Components/Datatable/overview.md
       - Default Configuration: Components/Datatable/default.md
       - Create a new DataTable: Components/Datatable/example.md
-  - API Reference: API/api.md
+  - API Reference:
+    - Repository:
+      - Overview: API/overview.md
+      - FCRepository: API/FCRepository.md
+      - FCTaskRepository: API/FCTaskRepository.md
+    - Utility:
+      - FCPersonaUtility: API/FCPersonaUtility.md
+      - FCLoggerUtility: API/FCLoggerUtility.md
 
 plugins:
   - glightbox
+  - search
+
+extra_css:
+  - stylesheets/style.css
