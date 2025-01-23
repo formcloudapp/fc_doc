@@ -21,7 +21,7 @@ theme:
     # Light Mode
     - scheme: default
       toggle:
-        icon: material/weather-sunny
+        icon: material/weather-night
         name: Dark Mode
       primary: rgb(34, 40, 160)
       accent: light green
@@ -67,6 +67,14 @@ nav:
       - Introduction: Components/Datatable/overview.md
       - Default Configuration: Components/Datatable/default.md
       - Create a new DataTable: Components/Datatable/example.md
+    - Form:
+      - Introduction: Components/Form/overview.md
+      - Create a new Form: Components/Form/example.md
+      - Section:
+        - Introduction: Components/Form/Section/overview.md
+      - Question:
+        - Introduction: Components/Form/Section/Question/overview.md
+        - Configurations: Components/Form/Section/Question/configuration.md
   - API Reference:
     - Repository:
       - Overview: API/overview.md

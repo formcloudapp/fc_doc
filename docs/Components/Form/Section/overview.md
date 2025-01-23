@@ -1,0 +1,1 @@
+A section is a container for questions fields. In the frontend, sections are rendered as a tab.
