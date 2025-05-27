@@ -69,12 +69,13 @@ nav:
       - Create a new DataTable: Components/Datatable/example.md
     - Form:
       - Introduction: Components/Form/overview.md
-      - Create a new Form: Components/Form/example.md
+      - Create a Record Producer form: Components/Form/example.md
       - Section:
         - Introduction: Components/Form/Section/overview.md
       - Question:
         - Introduction: Components/Form/Section/Question/overview.md
         - Configurations: Components/Form/Section/Question/configuration.md
+        - Text: Components/Form/Section/Question/text.md
   - API Reference:
     - Repository:
       - Overview: API/overview.md
