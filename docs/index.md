@@ -4,8 +4,8 @@
 
 Please follow the instructions below in sequential order:
 
-* Download: <a href="https://formcloud.app/media/FC_05_27_2025.xml" download>FC Server Application</a>
-* Download: <a href="https://formcloud.app/media/FC_05_27_2025.zip" download>FC Client Application</a>
+* Download: <a href="https://github.com/formcloudapp/fc_doc/blob/main/docs/FC_01.zip" download>FC Server Application</a>
+* Download: <a href="https://github.com/formcloudapp/fc_doc/blob/main/docs/FC_01_Client.zip" download>FC Client Application</a>
 * Go to Retrieved Update Sets and Import XML to load the "FC Server Application" update set.
 * Preview update set and commit.
 * Go to `https://[your_instance]/sys_ws_operation.do?sys_id=ed18366c975746d0e12c3eb0f053afce`
@@ -30,11 +30,30 @@ Please follow the instructions below in sequential order:
                 var prettyQuery = gqs.getPrettyQuery();
                 return prettyQuery;
             },
-            getImpersonatingUserName: function(){
+            getAvatar: function() {
+                return gs.getUser().getAvatar();
+            },
+            getImpersonatingUserName: function() {
                 return gs.getImpersonatingUserName();
             },
-            isImpersonating: function(){
+            isImpersonating: function() {
                 return new GlideImpersonate().isImpersonating();
+            },
+            getFields: function(gr) {
+                var fields = gr.getFields();
+                var result = [];
+                for (var i = 0; i < fields.size(); i++) {
+
+                    var field = fields.get(i);
+
+                    result.push({
+                        label: field.getLabel(),
+                        name: field.getName(),
+                        field_type: field.getInternalType().toString()
+                    });
+
+                }
+                return result;
             },
             type: 'FCGlobalUtility'
         };
